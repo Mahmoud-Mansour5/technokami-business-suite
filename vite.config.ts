@@ -1,10 +1,19 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  optimizeDeps: {
-    exclude: ['lucide-react'],
+  base: './',
+  build: {
+    outDir: 'dist'
   },
+  plugins: [
+    viteStaticCopy({
+      targets: [
+        { src: 'invoices.html', dest: '' },
+        { src: 'inventory.html', dest: '' },
+        { src: 'pos.html', dest: '' },
+        { src: 'logo.jpg', dest: '' }
+      ]
+    })
+  ]
 });

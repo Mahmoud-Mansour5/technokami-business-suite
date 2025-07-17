@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - TechnoKami</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CSlRAj1J.css">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <img src="./assets/logo-Wsold3aG.jpg" alt="TechnoKami Logo" class="w-10 h-10 object-contain rounded">
+                    <h1 class="text-2xl font-bold text-gray-800">TechnoKami</h1>
+                </div>
+
+                <div class="text-sm text-gray-500">Smart Business Management</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-blue-600 text-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex space-x-8">
+                <a href="index.html"
+                    class="flex items-center space-x-2 px-4 py-4 border-b-2 border-blue-400 bg-blue-700">
+                    <span>📊</span>
+                    <span class="font-medium">Dashboard</span>
+                </a>
+                <a href="pos.html" class="flex items-center space-x-2 px-4 py-4 hover:bg-blue-700 transition-colors">
+                    <span>🧾</span>
+                    <span class="font-medium">POS System</span>
+                </a>
+                <a href="inventory.html"
+                    class="flex items-center space-x-2 px-4 py-4 hover:bg-blue-700 transition-colors">
+                    <span>📦</span>
+                    <span class="font-medium">Inventory</span>
+                </a>
+                <a href="invoices.html"
+                    class="flex items-center space-x-2 px-4 py-4 hover:bg-blue-700 transition-colors">
+                    <span>📑</span>
+                    <span class="font-medium">Invoice Records</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-2">Business Dashboard</h2>
+            <p class="text-gray-600">Overview of your business performance</p>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-sm border hover:shadow-md transition-shadow">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-500 mb-1">Total Sales</p>
+                        <p class="text-2xl font-bold text-gray-800">$45,230</p>
+                        <p class="text-sm text-green-600">+12% from last month</p>
+                    </div>
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                        <span class="text-2xl">💰</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm border hover:shadow-md transition-shadow">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-500 mb-1">Total Invoices</p>
+                        <p class="text-2xl font-bold text-gray-800">1,234</p>
+                        <p class="text-sm text-blue-600">+8% from last month</p>
+                    </div>
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                        <span class="text-2xl">📋</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm border hover:shadow-md transition-shadow">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-500 mb-1">Products Sold</p>
+                        <p class="text-2xl font-bold text-gray-800">3,456</p>
+                        <p class="text-sm text-purple-600">+15% from last month</p>
+                    </div>
+                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                        <span class="text-2xl">📦</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm border hover:shadow-md transition-shadow">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-500 mb-1">Low Stock Items</p>
+                        <p class="text-2xl font-bold text-gray-800">12</p>
+                        <p class="text-sm text-red-600">Action required</p>
+                    </div>
+                    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                        <span class="text-2xl">⚠️</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-sm border h-96">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Sales Trend</h3>
+                <div class="h-64">
+                    <canvas id="salesChart"></canvas>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm border">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Top Products</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <img src="https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&dpr=2"
+                                alt="Chocolate Cake" class="w-10 h-10 rounded-lg object-cover">
+                            <div>
+                                <p class="font-medium text-gray-800">Chocolate Cake</p>
+                                <p class="text-sm text-gray-500">234 sold</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-medium text-gray-800">$2,340</p>
+                            <p class="text-sm text-green-600">+5%</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <img src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&dpr=2"
+                                alt="Coffee" class="w-10 h-10 rounded-lg object-cover">
+                            <div>
+                                <p class="font-medium text-gray-800">Premium Coffee</p>
+                                <p class="text-sm text-gray-500">189 sold</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-medium text-gray-800">$1,890</p>
+                            <p class="text-sm text-green-600">+8%</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <img src="https://images.pexels.com/photos/1647163/pexels-photo-1647163.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&dpr=2"
+                                alt="Sandwich" class="w-10 h-10 rounded-lg object-cover">
+                            <div>
+                                <p class="font-medium text-gray-800">Club Sandwich</p>
+                                <p class="text-sm text-gray-500">156 sold</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-medium text-gray-800">$1,560</p>
+                            <p class="text-sm text-green-600">+3%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="bg-white p-6 rounded-lg shadow-sm border">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">Recent Activity</h3>
+            <div class="space-y-4">
+                <div class="flex items-center space-x-4">
+                    <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                        <span class="text-green-600">✓</span>
+                    </div>
+                    <div class="flex-1">
+                        <p class="font-medium text-gray-800">New sale completed</p>
+                        <p class="text-sm text-gray-500">Invoice #1234 - $45.00</p>
+                    </div>
+                    <div class="text-sm text-gray-500">2 min ago</div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
+                        <span class="text-orange-600">⚠</span>
+                    </div>
+                    <div class="flex-1">
+                        <p class="font-medium text-gray-800">Low stock alert</p>
+                        <p class="text-sm text-gray-500">Premium Coffee - 5 items left</p>
+                    </div>
+                    <div class="text-sm text-gray-500">15 min ago</div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                        <span class="text-blue-600">📦</span>
+                    </div>
+                    <div class="flex-1">
+                        <p class="font-medium text-gray-800">Inventory updated</p>
+                        <p class="text-sm text-gray-500">Added 50 units of Chocolate Cake</p>
+                    </div>
+                    <div class="text-sm text-gray-500">1 hour ago</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-12">
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3">
+                        <img src="./assets/logo-Wsold3aG.jpg" alt="TechnoKami Logo" class="w-10 h-10 object-contain rounded">
+                        <h1 class="text-2xl font-bold text-gray-800">TechnoKami</h1>
+                    </div>
+
+                    <p class="text-gray-400">Smart Business Management System for modern businesses</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p>📧 technokami.tk@gmail.com</p>
+                        <p>☎️ +20 103 367 8792</p>
+
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-blue-400 hover:text-blue-300">Facebook</a>
+                        <a href="#" class="text-green-400 hover:text-green-300">WhatsApp</a>
+                        <a href="#" class="text-blue-400 hover:text-blue-300">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 TechnoKami. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
