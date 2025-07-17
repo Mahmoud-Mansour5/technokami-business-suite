@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="bg-gray-50">
     <!-- Header -->
     <header class="bg-white shadow-sm border-b">
@@ -25,7 +27,7 @@
     <!-- Navigation -->
     <nav class="bg-blue-600 text-white shadow-lg">
         <div class="container mx-auto px-4">
-            <div class="flex space-x-8">
+            <div class="flex flex-col sm:flex-row sm:space-x-8">
                 <a href="index.html" class="flex items-center space-x-2 px-4 py-4 hover:bg-blue-700 transition-colors">
                     <span>📊</span>
                     <span class="font-medium">Dashboard</span>
@@ -34,11 +36,13 @@
                     <span>🧾</span>
                     <span class="font-medium">POS System</span>
                 </a>
-                <a href="inventory.html" class="flex items-center space-x-2 px-4 py-4 hover:bg-blue-700 transition-colors">
+                <a href="inventory.html"
+                    class="flex items-center space-x-2 px-4 py-4 hover:bg-blue-700 transition-colors">
                     <span>📦</span>
                     <span class="font-medium">Inventory</span>
                 </a>
-                <a href="invoices.html" class="flex items-center space-x-2 px-4 py-4 hover:bg-blue-700 transition-colors">
+                <a href="invoices.html"
+                    class="flex items-center space-x-2 px-4 py-4 hover:bg-blue-700 transition-colors">
                     <span>📑</span>
                     <span class="font-medium">Invoice Records</span>
                 </a>
@@ -58,41 +62,54 @@
             <div class="lg:col-span-2">
                 <div class="bg-white p-6 rounded-lg shadow-sm border">
                     <h3 class="text-lg font-semibold text-gray-800 mb-4">Product Selection</h3>
-                    
+
                     <!-- Search Bar -->
                     <div class="mb-4">
-                        <input type="text" id="productSearch" placeholder="Search products..." class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <input type="text" id="productSearch" placeholder="Search products..."
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                     </div>
 
                     <!-- Product Grid -->
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="productGrid">
-                        <div class="product-item border rounded-lg p-4 hover:shadow-md transition-shadow cursor-pointer" data-name="Chocolate Cake" data-price="15.99">
-                            <img src="https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&dpr=2" alt="Chocolate Cake" class="w-full h-24 object-cover rounded-lg mb-2">
+                        <div class="product-item border rounded-lg p-4 hover:shadow-md transition-shadow cursor-pointer"
+                            data-name="Chocolate Cake" data-price="15.99">
+                            <img src="https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&dpr=2"
+                                alt="Chocolate Cake" class="w-full h-24 object-cover rounded-lg mb-2">
                             <h4 class="font-medium text-gray-800">Chocolate Cake</h4>
                             <p class="text-blue-600 font-semibold">$15.99</p>
                         </div>
-                        <div class="product-item border rounded-lg p-4 hover:shadow-md transition-shadow cursor-pointer" data-name="Premium Coffee" data-price="4.99">
-                            <img src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&dpr=2" alt="Premium Coffee" class="w-full h-24 object-cover rounded-lg mb-2">
+                        <div class="product-item border rounded-lg p-4 hover:shadow-md transition-shadow cursor-pointer"
+                            data-name="Premium Coffee" data-price="4.99">
+                            <img src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&dpr=2"
+                                alt="Premium Coffee" class="w-full h-24 object-cover rounded-lg mb-2">
                             <h4 class="font-medium text-gray-800">Premium Coffee</h4>
                             <p class="text-blue-600 font-semibold">$4.99</p>
                         </div>
-                        <div class="product-item border rounded-lg p-4 hover:shadow-md transition-shadow cursor-pointer" data-name="Club Sandwich" data-price="12.99">
-                            <img src="https://images.pexels.com/photos/1647163/pexels-photo-1647163.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&dpr=2" alt="Club Sandwich" class="w-full h-24 object-cover rounded-lg mb-2">
+                        <div class="product-item border rounded-lg p-4 hover:shadow-md transition-shadow cursor-pointer"
+                            data-name="Club Sandwich" data-price="12.99">
+                            <img src="https://images.pexels.com/photos/1647163/pexels-photo-1647163.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&dpr=2"
+                                alt="Club Sandwich" class="w-full h-24 object-cover rounded-lg mb-2">
                             <h4 class="font-medium text-gray-800">Club Sandwich</h4>
                             <p class="text-blue-600 font-semibold">$12.99</p>
                         </div>
-                        <div class="product-item border rounded-lg p-4 hover:shadow-md transition-shadow cursor-pointer" data-name="Fresh Juice" data-price="6.99">
-                            <img src="https://images.pexels.com/photos/96974/pexels-photo-96974.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&dpr=2" alt="Fresh Juice" class="w-full h-24 object-cover rounded-lg mb-2">
+                        <div class="product-item border rounded-lg p-4 hover:shadow-md transition-shadow cursor-pointer"
+                            data-name="Fresh Juice" data-price="6.99">
+                            <img src="https://images.pexels.com/photos/96974/pexels-photo-96974.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&dpr=2"
+                                alt="Fresh Juice" class="w-full h-24 object-cover rounded-lg mb-2">
                             <h4 class="font-medium text-gray-800">Fresh Juice</h4>
                             <p class="text-blue-600 font-semibold">$6.99</p>
                         </div>
-                        <div class="product-item border rounded-lg p-4 hover:shadow-md transition-shadow cursor-pointer" data-name="Pasta" data-price="18.99">
-                            <img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&dpr=2" alt="Pasta" class="w-full h-24 object-cover rounded-lg mb-2">
+                        <div class="product-item border rounded-lg p-4 hover:shadow-md transition-shadow cursor-pointer"
+                            data-name="Pasta" data-price="18.99">
+                            <img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&dpr=2"
+                                alt="Pasta" class="w-full h-24 object-cover rounded-lg mb-2">
                             <h4 class="font-medium text-gray-800">Pasta</h4>
                             <p class="text-blue-600 font-semibold">$18.99</p>
                         </div>
-                        <div class="product-item border rounded-lg p-4 hover:shadow-md transition-shadow cursor-pointer" data-name="Ice Cream" data-price="8.99">
-                            <img src="https://images.pexels.com/photos/1362534/pexels-photo-1362534.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&dpr=2" alt="Ice Cream" class="w-full h-24 object-cover rounded-lg mb-2">
+                        <div class="product-item border rounded-lg p-4 hover:shadow-md transition-shadow cursor-pointer"
+                            data-name="Ice Cream" data-price="8.99">
+                            <img src="https://images.pexels.com/photos/1362534/pexels-photo-1362534.jpeg?auto=compress&cs=tinysrgb&w=200&h=150&dpr=2"
+                                alt="Ice Cream" class="w-full h-24 object-cover rounded-lg mb-2">
                             <h4 class="font-medium text-gray-800">Ice Cream</h4>
                             <p class="text-blue-600 font-semibold">$8.99</p>
                         </div>
@@ -104,7 +121,7 @@
             <div class="lg:col-span-1">
                 <div class="bg-white p-6 rounded-lg shadow-sm border">
                     <h3 class="text-lg font-semibold text-gray-800 mb-4">Current Order</h3>
-                    
+
                     <!-- Cart Items -->
                     <div id="cartItems" class="space-y-3 mb-6">
                         <div class="text-gray-500 text-center py-8">
@@ -130,16 +147,20 @@
 
                         <!-- Customer Info -->
                         <div class="mb-4">
-                            <input type="text" id="customerName" placeholder="Customer Name (Optional)" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <input type="text" id="customerName" placeholder="Customer Name (Optional)"
+                                class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
 
                         <!-- Action Buttons -->
                         <div class="space-y-3">
-                            <button id="sellButton" class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                            <button id="sellButton"
+                                class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                                disabled>
                                 <span>🖨️</span>
                                 <span>Sell & Print Invoice</span>
                             </button>
-                            <button id="clearCart" class="w-full bg-gray-600 text-white py-2 rounded-lg hover:bg-gray-700 transition-colors">
+                            <button id="clearCart"
+                                class="w-full bg-gray-600 text-white py-2 rounded-lg hover:bg-gray-700 transition-colors">
                                 Clear Cart
                             </button>
                         </div>
@@ -149,7 +170,7 @@
         </div>
     </main>
 
-  <!-- Footer -->
+    <!-- Footer -->
     <footer class="bg-gray-800 text-white mt-12">
         <div class="container mx-auto px-4 py-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
